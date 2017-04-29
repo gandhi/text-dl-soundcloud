@@ -1,14 +1,18 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var exec = require('child_process').exec;
-var config = require('./config');
 var Dropbox = require('dropbox');
-var dbx = new Dropbox({ accessToken: config.access });
 const fs = require('fs');
 var path = require('path');
+
+var exec = require('child_process').exec;
+var config = require('./config');
+
+var PORT = 3000;
+
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
-var PORT = 3000;
+
+var dbx = new Dropbox({ accessToken: config.access });
 
 app.post("/message", function(req, res) {
     console.log('Message!');
