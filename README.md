@@ -1,6 +1,6 @@
 # SoundCloud Downloader w/ Twilio and Dropbox
 
-This is super hacky.
+Huge shoutout to [soundscrape](https://github.com/Miserlou/SoundScrape) for doing all the heavy lifting of this project.
 
 By the end of this README, you will have a phone number that when texted a SoundCloud track link will download the song directly to your Dropbox.
 
