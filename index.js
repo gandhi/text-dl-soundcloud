@@ -20,7 +20,7 @@ app.post("/message", function(req, res) {
     var link = req.body.Body;
     console.log('Link: ' + link);
     exec('cd music && soundscrape -d ' + link, function callback(error, stdout, stderr) {
-        if (stdout.indexOf('Skipping:') > -1) {
+        if (stdout.indexOf('Skipping:') > -1 || stderr.indexOf('Traceback') > -1) {
             console.log('Must get LQ version');
             exec('cd music && soundscrape ' + link, function callback(error, stdout, stderr) {
                 console.log(stdout);
